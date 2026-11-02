@@ -51,7 +51,7 @@ Live, regenerated on every run. The same data drives [`site/index.html`](site/in
 The number that would move tonight if an author shipped a fix.
 
 <!-- EC:DAILY:START -->
-> **2026-11-02** · regenerated 2026-11-02T13:49:11.026Z
+> **2026-11-02** · regenerated 2026-11-02T13:49:49.790Z
 
 | # | Plugin | Version | Daily waste (a.u.) | Fastest timer | Hidden-tab guard |
 |---|---|---|---|---|---|
