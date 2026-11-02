@@ -51,7 +51,7 @@ Live, regenerated on every run. The same data drives [`site/index.html`](site/in
 The number that would move tonight if an author shipped a fix.
 
 <!-- EC:DAILY:START -->
-> **2026-11-02** · regenerated 2026-11-02T13:49:49.790Z
+> **2026-11-02** · regenerated 2026-11-02T13:57:02.857Z
 
 | # | Plugin | Version | Daily waste (a.u.) | Fastest timer | Hidden-tab guard |
 |---|---|---|---|---|---|
@@ -194,7 +194,16 @@ EC_PROFILE=/path/to/profile npm run inspect
 
 # regenerate the site and README from the last scan, without re-scanning
 npm run render
+
+# prove the model still holds its invariants
+npm test
 ```
+
+`npm test` runs against `fixtures/profile`, a four-package synthetic profile
+that pins the two properties this project must never lose: a visibility guard
+halves the bill, and a UI timer is not billed as a network timer. Those tests
+were written **after** both properties were broken during development — see
+[`docs/METHOD.md`](docs/METHOD.md) for what went wrong and how it was caught.
 
 Exit codes are meaningful to a scheduler:
 

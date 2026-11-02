@@ -107,7 +107,31 @@ async function main() {
   const history = readJson(historyPath, {});
 
   const todayIso = new Date().toISOString().slice(0, 10);
-  let scored = readJson(join(DATA, "latest-scan.json"), []);
+  // `latest-scan.json` stores FLAT records (name/version/hotIntervals/score),
+  // while `buildBoards` expects the richer in-memory shape with a `finding` and
+  // a `score` object. `--render-only` re-hydrates the flat file back into that
+  // shape instead of re-scanning. Getting this wrong made every render-only run
+  // crash on `finding.visibilityGuard`, which is exactly the kind of failure a
+  // nightly job would hit and a human would not.
+  let scored = readJson(join(DATA, "latest-scan.json"), []).map((record) => ({
+    name: record.name,
+    version: record.version,
+    payloadBytes: record.payloadBytes ?? 1024,
+    finding: {
+      sizeBytes: record.sizeBytes ?? 0,
+      visibilityGuard: record.visibilityGuard === true,
+      hotIntervals: record.hotIntervals ?? [],
+      conditionalIntervals: record.conditionalIntervals ?? [],
+      uiOnlyHotIntervals: record.uiOnlyHotIntervals ?? [],
+      endpoints: record.endpoints ?? [],
+    },
+    score: {
+      total: record.score?.total ?? 0,
+      pollingCost: record.score?.pollingCost ?? 0,
+      parseCost: record.score?.parseCost ?? 0,
+      fastestIntervalMs: record.score?.fastestIntervalMs ?? record.hotIntervals?.[0],
+    },
+  }));
 
   if (!renderOnly) {
     const profileDir = resolveProfile();

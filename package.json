@@ -11,7 +11,8 @@
   "scripts": {
     "inspect": "node bin/inspect.mjs",
     "inspect:dry": "node bin/inspect.mjs --dry-run",
-    "render": "node bin/inspect.mjs --render-only"
+    "render": "node bin/inspect.mjs --render-only",
+    "test": "node --test test/*.test.mjs"
   },
   "keywords": [
     "carbon-footprint",

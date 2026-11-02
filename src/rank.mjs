@@ -99,6 +99,20 @@ export function rollingMean(values, window = 7) {
  * @returns `{ daily, weekly, allTime }` boards, each an array of rows.
  */
 export function buildBoards(history, todayEntries, todayIso) {
+  // Count today even when the caller has not yet folded it into history. The
+  // boards are built from the ranking that includes today, so a row that shows
+  // today's score but claims zero days listed would be incoherent — and it was:
+  // a direct `buildBoards` call (which `--render-only` takes) reported
+  // `daysListed: 0` for a plugin it had just ranked.
+  const listedDays = (name) => {
+    const days = { ...(history[name]?.days ?? {}) };
+    if (days[todayIso] === undefined) {
+      const entry = todayEntries.find((candidate) => candidate.name === name);
+      if (entry !== undefined) days[todayIso] = entry.score.total;
+    }
+    return days;
+  };
+
   const daily = todayEntries.map((entry, index) => ({
     rank: index + 1,
     name: entry.name,
@@ -107,14 +121,14 @@ export function buildBoards(history, todayEntries, todayIso) {
     fastestIntervalMs: entry.score.fastestIntervalMs,
     visibilityGuard: entry.finding.visibilityGuard,
     sizeBytes: entry.finding.sizeBytes,
-    daysListed: Object.keys(history[entry.name]?.days ?? {}).length,
+    daysListed: Object.keys(listedDays(entry.name)).length,
   }));
 
   const weeklyRows = [];
   const allTimeRows = [];
 
   for (const entry of todayEntries) {
-    const days = history[entry.name]?.days ?? {};
+    const days = listedDays(entry.name);
     const series = Object.keys(days).sort().map((key) => days[key]);
     const weekMean = rollingMean(series, 7);
     const peak = series.length > 0 ? Math.max(...series) : 0;
