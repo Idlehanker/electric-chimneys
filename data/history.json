@@ -1,0 +1,128 @@
+{
+  "@michengai/dsh-im-connect": {
+    "days": {
+      "2026-11-02": 26205.22
+    },
+    "version": "1.0.21"
+  },
+  "dshmarket": {
+    "days": {
+      "2026-11-02": 6122.87
+    },
+    "version": "1.73.7"
+  },
+  "dsh-better-sidebar": {
+    "days": {
+      "2026-11-02": 1530.27
+    },
+    "version": "0.28.2"
+  },
+  "@linxin666/dsh-client-ui-task-board": {
+    "days": {
+      "2026-11-02": 727.16
+    },
+    "version": "0.4.13"
+  },
+  "@michengai/dsh-agency-agents": {
+    "days": {
+      "2026-11-02": 696.4
+    },
+    "version": "1.2.20"
+  },
+  "dsh-connect-workbuddy": {
+    "days": {
+      "2026-11-02": 649.88
+    },
+    "version": "5.16.0-trusted-hosts.1"
+  },
+  "dsh-context": {
+    "days": {
+      "2026-11-02": 602.17
+    },
+    "version": "0.78.2"
+  },
+  "dsh-our-free-model": {
+    "days": {
+      "2026-11-02": 550.21
+    },
+    "version": "2.7.2"
+  },
+  "@michengai/dsh-btw": {
+    "days": {
+      "2026-11-02": 484.4
+    },
+    "version": "1.3.0"
+  },
+  "@michengai/dsh-codex-ui": {
+    "days": {
+      "2026-11-02": 404.82
+    },
+    "version": "2.0.9"
+  },
+  "@michengai/dsh-archive-manager": {
+    "days": {
+      "2026-11-02": 251.07
+    },
+    "version": "1.1.22"
+  },
+  "@michengai/dsh-skills-manager": {
+    "days": {
+      "2026-11-02": 236.5
+    },
+    "version": "1.2.25"
+  },
+  "@michengai/dsh-automation": {
+    "days": {
+      "2026-11-02": 163.24
+    },
+    "version": "1.0.13"
+  },
+  "dsh-free-search": {
+    "days": {
+      "2026-11-02": 145.51
+    },
+    "version": "0.9.25"
+  },
+  "@michengai/dsh-codex-pet": {
+    "days": {
+      "2026-11-02": 126.86
+    },
+    "version": "1.0.7"
+  },
+  "@leon___/dsh-client-liang-intensity-skin": {
+    "days": {
+      "2026-11-02": 108.11
+    },
+    "version": "0.1.15-settings.4"
+  },
+  "@fffangchenghao/dsh-web-search": {
+    "days": {
+      "2026-11-02": 58.23
+    },
+    "version": "0.24.0"
+  },
+  "@liustack/modlens": {
+    "days": {
+      "2026-11-02": 49.17
+    },
+    "version": "3.27.2"
+  },
+  "dsh-provider-showing": {
+    "days": {
+      "2026-11-02": 18.85
+    },
+    "version": "1.2.0"
+  },
+  "@michengai/dsh-code-review": {
+    "days": {
+      "2026-11-02": 2.79
+    },
+    "version": "1.0.5"
+  },
+  "@michengai/dsh-simplify": {
+    "days": {
+      "2026-11-02": 1.64
+    },
+    "version": "1.0.5"
+  }
+}

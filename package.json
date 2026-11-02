@@ -1,0 +1,33 @@
+{
+  "name": "electric-chimneys",
+  "version": "1.0.0",
+  "private": false,
+  "description": "Electric Chimneys — a public ledger of the most carbon-wasteful DSH plugins, re-measured every day.",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "inspect": "node bin/inspect.mjs",
+    "inspect:dry": "node bin/inspect.mjs --dry-run",
+    "render": "node bin/inspect.mjs --render-only"
+  },
+  "keywords": [
+    "carbon-footprint",
+    "sustainability",
+    "energy",
+    "dsh",
+    "deepseek-harness",
+    "plugin-audit",
+    "green-software"
+  ],
+  "files": [
+    "src",
+    "bin",
+    "site",
+    "data",
+    "README.md",
+    "LICENSE"
+  ]
+}

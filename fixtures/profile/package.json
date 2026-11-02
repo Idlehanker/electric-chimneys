@@ -1,0 +1,9 @@
+{
+  "name": "electric-chimneys-fixture-profile",
+  "private": true,
+  "dsh": {
+    "profile": {
+      "bundles": ["demo-chimney", "demo-polite", "demo-bloat", "demo-steady"]
+    }
+  }
+}

@@ -1,0 +1,76 @@
+name: Daily audit
+
+# The whole point of this repository is that the number moves every day. A
+# scheduled job that regenerates the boards and commits them is therefore not
+# automation for its own sake — it is the product.
+#
+# Design notes:
+# - The scan is fully offline. It reads a profile directory, never the network,
+#   so a scheduled run cannot fail because of an upstream outage.
+# - A CI runner cannot see the author's own plugin profile, so the job audits a
+#   committed fixture (fixtures/profile). To audit a real machine, run
+#   `npm run inspect` locally and commit the result.
+# - `continue-on-error` is NOT used: exit code 1 means "ran but found offenders",
+#   which is a successful audit, not a failed job. The step below treats 1 as OK.
+
+on:
+  schedule:
+    # 03:17 UTC daily — off the hour so it does not queue behind every other cron.
+    - cron: "17 3 * * *"
+  workflow_dispatch:
+    inputs:
+      profile:
+        description: "Profile directory to audit (relative to the repository root)"
+        required: false
+        default: "fixtures/profile"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-audit
+  cancel-in-progress: false
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run the audit
+        id: audit
+        env:
+          EC_PROFILE: ${{ github.event.inputs.profile || 'fixtures/profile' }}
+        run: |
+          set +e
+          node bin/inspect.mjs
+          code=$?
+          set -e
+          # 0 = clean, 1 = ran and found offenders. Both mean the audit worked.
+          if [ "$code" -gt 1 ]; then
+            echo "::error::audit failed to run (exit $code)"
+            exit "$code"
+          fi
+          echo "Offenders found: $([ "$code" -eq 1 ] && echo yes || echo no)"
+
+      - name: Commit regenerated boards
+        run: |
+          git config user.name  "electric-chimneys[bot]"
+          git config user.email "electric-chimneys@users.noreply.github.com"
+          git add -A data site README.md
+          if git diff --cached --quiet; then
+            echo "Nothing changed today — no commit."
+            exit 0
+          fi
+          git commit -m "audit: $(date -u +%Y-%m-%d)"
+          git push
