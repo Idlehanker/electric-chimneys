@@ -43,7 +43,7 @@ repository. It is the specification.
 Live, regenerated on every run. The same data drives [`site/index.html`](site/index.html).
 
 <!-- EC:TOTAL:START -->
-**21** plugins audited · **39.1k** total daily waste units · last run 2026-11-02
+**0** plugins audited · **0.00** total daily waste units · last run 2026-11-03
 <!-- EC:TOTAL:END -->
 
 ### 🕛 Today's board — *one scan, one day*
@@ -51,20 +51,11 @@ Live, regenerated on every run. The same data drives [`site/index.html`](site/in
 The number that would move tonight if an author shipped a fix.
 
 <!-- EC:DAILY:START -->
-> **2026-11-02** · regenerated 2026-11-02T13:57:02.857Z
+> **2026-11-03** · regenerated 2026-11-03T10:47:23.596Z
 
 | # | Plugin | Version | Daily waste (a.u.) | Fastest timer | Hidden-tab guard |
 |---|---|---|---|---|---|
-| 1 | `@michengai/dsh-im-connect` | 1.0.21 | 26.2k | 2000 ms | yes |
-| 2 | `dshmarket` | 1.73.7 | 6.1k | 2000 ms | **no** |
-| 3 | `dsh-better-sidebar` | 0.28.2 | 1.5k | — ms | yes |
-| 4 | `@linxin666/dsh-client-ui-task-board` | 0.4.13 | 727 | — ms | yes |
-| 5 | `@michengai/dsh-agency-agents` | 1.2.20 | 696 | — ms | **no** |
-| 6 | `dsh-connect-workbuddy` | 5.16.0-trusted-hosts.1 | 650 | — ms | **no** |
-| 7 | `dsh-context` | 0.78.2 | 602 | — ms | **no** |
-| 8 | `dsh-our-free-model` | 2.7.2 | 550 | — ms | yes |
-| 9 | `@michengai/dsh-btw` | 1.3.0 | 484 | — ms | yes |
-| 10 | `@michengai/dsh-codex-ui` | 2.0.9 | 405 | — ms | yes |
+
 <!-- EC:DAILY:END -->
 
 ### 🗓 This week — *rolling 7-day mean*
@@ -76,16 +67,7 @@ quiet Tuesday.
 <!-- EC:WEEKLY:START -->
 | # | Plugin | Version | 7-day mean (a.u.) | Days sampled | Today |
 |---|---|---|---|---|---|
-| 1 | `@michengai/dsh-im-connect` | 1.0.21 | 26.2k | 1 | 26.2k |
-| 2 | `dshmarket` | 1.73.7 | 6.1k | 1 | 6.1k |
-| 3 | `dsh-better-sidebar` | 0.28.2 | 1.5k | 1 | 1.5k |
-| 4 | `@linxin666/dsh-client-ui-task-board` | 0.4.13 | 727 | 1 | 727 |
-| 5 | `@michengai/dsh-agency-agents` | 1.2.20 | 696 | 1 | 696 |
-| 6 | `dsh-connect-workbuddy` | 5.16.0-trusted-hosts.1 | 650 | 1 | 650 |
-| 7 | `dsh-context` | 0.78.2 | 602 | 1 | 602 |
-| 8 | `dsh-our-free-model` | 2.7.2 | 550 | 1 | 550 |
-| 9 | `@michengai/dsh-btw` | 1.3.0 | 484 | 1 | 484 |
-| 10 | `@michengai/dsh-codex-ui` | 2.0.9 | 405 | 1 | 405 |
+
 <!-- EC:WEEKLY:END -->
 
 ### 🏆 All time — *peak score, and for how long*
@@ -96,16 +78,7 @@ is a different problem from one that spiked once.
 <!-- EC:ALLTIME:START -->
 | # | Plugin | Version | Peak (a.u.) | Days listed |
 |---|---|---|---|---|
-| 1 | `@michengai/dsh-im-connect` | 1.0.21 | 26.2k | 1 |
-| 2 | `dshmarket` | 1.73.7 | 6.1k | 1 |
-| 3 | `dsh-better-sidebar` | 0.28.2 | 1.5k | 1 |
-| 4 | `@linxin666/dsh-client-ui-task-board` | 0.4.13 | 727 | 1 |
-| 5 | `@michengai/dsh-agency-agents` | 1.2.20 | 696 | 1 |
-| 6 | `dsh-connect-workbuddy` | 5.16.0-trusted-hosts.1 | 650 | 1 |
-| 7 | `dsh-context` | 0.78.2 | 602 | 1 |
-| 8 | `dsh-our-free-model` | 2.7.2 | 550 | 1 |
-| 9 | `@michengai/dsh-btw` | 1.3.0 | 484 | 1 |
-| 10 | `@michengai/dsh-codex-ui` | 2.0.9 | 405 | 1 |
+
 <!-- EC:ALLTIME:END -->
 
 ---
