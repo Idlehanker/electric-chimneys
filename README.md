@@ -43,7 +43,7 @@ repository. It is the specification.
 Live, regenerated on every run. The same data drives [`site/index.html`](site/index.html).
 
 <!-- EC:TOTAL:START -->
-**0** plugins audited · **0.00** total daily waste units · last run 2026-11-26
+**0** plugins audited · **0.00** total daily waste units · last run 2026-11-27
 <!-- EC:TOTAL:END -->
 
 ### 🕛 Today's board — *one scan, one day*
@@ -51,7 +51,7 @@ Live, regenerated on every run. The same data drives [`site/index.html`](site/in
 The number that would move tonight if an author shipped a fix.
 
 <!-- EC:DAILY:START -->
-> **2026-11-26** · regenerated 2026-11-26T12:24:48.691Z
+> **2026-11-27** · regenerated 2026-11-27T12:10:47.378Z
 
 | # | Plugin | Version | Daily waste (a.u.) | Fastest timer | Hidden-tab guard |
 |---|---|---|---|---|---|
